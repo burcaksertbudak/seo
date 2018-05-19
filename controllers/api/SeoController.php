@@ -1,13 +1,13 @@
 <?php
 
-namespace kouosl\sample\controllers\api;
+namespace kouosl\seo\controllers\api;
 
-use kouosl\sample\models\Samples;
+use kouosl\seo\models\Seo;
 use Yii;
 
 class SamplesController extends DefaultController {
 	
-	public $modelClass = 'kouosl\sample\models\Samples';
+	public $modelClass = 'kouosl\seo\models\Seo';
 	
 	public function actions() {
 		$actions = parent::actions ();
@@ -33,7 +33,7 @@ class SamplesController extends DefaultController {
 
 		$postParams = yii::$app->request->post();
 		
-		$model = new Samples();
+		$model = new Seo();
 	
 		
 		if($model->load($postParams,'') && $model->validate()){
@@ -64,7 +64,7 @@ class SamplesController extends DefaultController {
 	
 	public function actionDelete($id){
 		
-		if(Samples::findOne($id)->delete())
+		if(Seo::findOne($id)->delete())
 			return ['status' => 1];
 		else
 			return ['stauts' => 100];

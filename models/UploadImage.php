@@ -1,8 +1,8 @@
 <?php
 
-namespace kouosl\sample\models;
+namespace kouosl\seo\models;
 
-use kouosl\sample\Module;
+use kouosl\seo\Module;
 use Yii;
 
 /**
@@ -35,7 +35,7 @@ class UploadImage extends \yii\base\Model
 
             $this->imageName = Yii::$app->security->generateRandomString(16) . '.' . $this->imageFile->extension;
 
-            $imagePath = sprintf("%s/samples/%s",Yii::getAlias ( '@data' ),$this->imageName);
+            $imagePath = sprintf("%s/seo/%s",Yii::getAlias ( '@data' ),$this->imageName);
 
             if (!$this->imageFile->saveAs($imagePath)) {
                 yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('sample', 'File not uploaded.' )]);

@@ -1,11 +1,11 @@
 <?php
 
-namespace kouosl\sample\models;
+namespace kouosl\seo\models;
 
 use Yii;
 
 /**
- * This is the model class for table "sample_data".
+ * This is the model class for table "seo_data".
  *
  * @property integer $id
  * @property string $name
@@ -13,14 +13,14 @@ use Yii;
  *
  * @property Samples $sample
  */
-class SampleData extends \yii\db\ActiveRecord
+class SeoData extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'sample_data';
+        return 'seo_data';
     }
 
     /**
@@ -29,10 +29,10 @@ class SampleData extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'sample_id'], 'required'],
-            [['sample_id'], 'integer'],
+            [['name', 'seo_id'], 'required'],
+            [['seo_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
-            [['sample_id'], 'exist', 'skipOnError' => true, 'targetClass' => Samples::className(), 'targetAttribute' => ['sample_id' => 'id']],
+            [['sample_id'], 'exist', 'skipOnError' => true, 'targetClass' => Samples::className(), 'targetAttribute' => ['seo_id' => 'id']],
         ];
     }
 
@@ -44,15 +44,15 @@ class SampleData extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'sample_id' => 'Sample ID',
+            'seo_id' => 'Seo ID',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getSample()
+    public function getSeo()
     {
-        return $this->hasOne(Samples::className(), ['id' => 'sample_id']);
+        return $this->hasOne(Seo::className(), ['id' => 'seo_id']);
     }
 }

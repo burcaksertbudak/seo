@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\sample\controllers\backend;
+namespace kouosl\seo\controllers\backend;
 
 class DefaultController extends \kouosl\base\controllers\backend\BaseController
 {

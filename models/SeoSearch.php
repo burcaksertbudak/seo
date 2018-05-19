@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\sample\models;
+namespace kouosl\seo\models;
 
 use Yii;
 use yii\base\Model;
@@ -9,7 +9,7 @@ use yii\data\ActiveDataProvider;
 /**
  * SampleSearch represents the model behind the search form about `app\modules\sample\models\Sample`.
  */
-class SamplesSearch extends Samples
+class SeoSearch extends Seo
 {
     /**
      * @inheritdoc
@@ -40,7 +40,7 @@ class SamplesSearch extends Samples
      */
     public function search($params)
     {
-        $query = Samples::find();
+        $query = Seo::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

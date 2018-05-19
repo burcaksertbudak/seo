@@ -1,12 +1,12 @@
 <?php
 
-namespace kouosl\sample\controllers\backend;
+namespace kouosl\seo\controllers\backend;
 
-use kouosl\sample\models\SampleData;
-use kouosl\sample\models\UploadImage;
+use kouosl\seo\models\SeoData;
+use kouosl\seo\models\UploadImage;
 use Yii;
-use kouosl\sample\models\Samples;
-use kouosl\sample\models\SamplesSearch;
+use kouosl\seo\models\Seo;
+use kouosl\seo\models\SeoSearch;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UnauthorizedHttpException;
@@ -16,7 +16,7 @@ use yii\filters\AccessControl;
 /**
  * SamplesController implements the CRUD actions for Sample model.
  */
-class SamplesController extends DefaultController
+class SeoController extends DefaultController
 {
     public function behaviors()
     {
@@ -60,7 +60,7 @@ class SamplesController extends DefaultController
     	
 
     	
-        $searchModel = new SamplesSearch();
+        $searchModel = new SeoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('_manage', [
@@ -92,7 +92,7 @@ class SamplesController extends DefaultController
     {
 
     	
-        $model = new Samples();
+        $model = new Seo();
 
         $uploadImage = new UploadImage();
 
@@ -104,7 +104,7 @@ class SamplesController extends DefaultController
 
             if(!$model->save()){
 
-                yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('sample', 'Sample Not Saved' )]);
+                yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('seo', 'Seo Not Saved' )]);
 
                 return $this->render('_create', ['model' => $model]); // error
             }
@@ -145,7 +145,7 @@ class SamplesController extends DefaultController
 
             if(!$model->save()){
 
-                yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('sample', 'Sample Not Saved' )]);
+                yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('sample', 'Seo Not Saved' )]);
 
                 return $this->render('_update', ['model' => $model]); // error
             }
@@ -170,7 +170,7 @@ class SamplesController extends DefaultController
     public function actionDelete($id)
     {
 
-        SampleData::deleteAll(['sample_id' => $id]);
+        SeoData::deleteAll(['seo_id' => $id]);
 
         $model = $this->findModel($id);
 
@@ -188,7 +188,7 @@ class SamplesController extends DefaultController
      * Finds the Sample model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Sample the loaded model
+     * @return Seo the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)

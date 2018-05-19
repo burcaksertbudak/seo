@@ -1,8 +1,8 @@
 {
-    "name": "kouosl/portal-sample",
-    "description": "Sample module for KOUOSL PORTAL",
+    "name": "kouosl/portal-seo",
+    "description": "Seo module for KOUOSL PORTAL",
     "type": "yii2-extension",
-    "keywords": ["yii2", "yii 2", "samples", "sample", "module", "modules"],
+    "keywords": ["yii2", "yii 2", "seo", "seo", "module", "modules"],
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -10,13 +10,13 @@
             "email": "info@kouosl.org"
         },
         {
-            "name": "Ekrem HATİPOĞLU",
-            "email": "ekrem.hatipoglu@outlook.com"
+            "name": "Burçak Sertbudak",
+            "email": "burcaksertbudak@gmail.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "kouosl\\sample\\": ""
+            "kouosl\\seo\\": ""
         }
     }
 }
