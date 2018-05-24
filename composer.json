@@ -1,5 +1,5 @@
 {
-    "name": "kouosl/portal-seo",
+    "name": "kouosl/seo",
     "description": "Seo module for KOUOSL PORTAL",
     "type": "yii2-extension",
     "keywords": ["yii2", "yii 2", "seo", "seo", "module", "modules"],
